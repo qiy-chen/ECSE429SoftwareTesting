@@ -8,7 +8,7 @@ import java.net.http.HttpRequest.Builder;
 import java.net.http.HttpResponse.BodyHandlers;
 import java.util.concurrent.TimeUnit;
 
-class Script {
+class ExploratoryTestScript {
     static final String baseURL = "http://localhost:4567/";
     static HttpClient client = HttpClient.newHttpClient();
     public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException {
