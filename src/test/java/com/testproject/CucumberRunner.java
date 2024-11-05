@@ -2,11 +2,11 @@ package com.testproject;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.platform.suite.api.ConfigurationParameter;
+import org.junit.platform.suite.api.IncludeEngines;
 import org.junit.platform.suite.api.SelectPackages;
 import org.junit.platform.suite.api.Suite;
 
 import io.cucumber.junit.platform.engine.Constants;
-import io.cucumber.junit.platform.engine.Cucumber;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -15,21 +15,18 @@ import java.net.http.HttpRequest.Builder;
 import java.net.http.HttpResponse.BodyHandlers;
 
 @Suite
+@IncludeEngines("cucumber")
 @SelectPackages("features")
 @ConfigurationParameter(
    key = Constants.GLUE_PROPERTY_NAME,
    value = "com.testproject.steps"
 )
+//@ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME, value = "pretty")
+@ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME, value = "html:target/cucumber.html")
 public class CucumberRunner {
     static final String baseURL = "http://localhost:4567/todos";
     static HttpClient client = HttpClient.newHttpClient();
     static Builder request = HttpRequest.newBuilder();
-
-    static final int SUCESS_CODE = 200;
-    static final int CREATED_CODE = 201;
-    static final int BAD_REQUEST_CODE = 400; 
-    static final int NOT_FOUND_CODE = 404; 
-    static final int NOT_ALLOWED_CODE = 405; 
 
     static final String TODOS = "todos";
 

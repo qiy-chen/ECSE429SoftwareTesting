@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.testproject.todoTasksOfTest" time="0.001" tests="1" errors="1" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.testproject.todoTasksOfTest" time="0.064" tests="10" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CA"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
-    <property name="sun.java.command" value="C:\Users\Qi\AppData\Local\Temp\surefire6898498435244073409\surefirebooter-20241104192542233_3.jar C:\Users\Qi\AppData\Local\Temp\surefire6898498435244073409 2024-11-04T19-25-42_110-jvmRun1 surefire-20241104192542233_1tmp surefire_0-20241104192542233_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Qi\AppData\Local\Temp\surefire10818904146357488195\surefirebooter-20241104221521661_3.jar C:\Users\Qi\AppData\Local\Temp\surefire10818904146357488195 2024-11-04T22-15-21_540-jvmRun1 surefire-20241104221521661_1tmp surefire_0-20241104221521661_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Qi\OneDrive - McGill University\ECSE 429\ECSE429SoftwareTesting\target\test-classes;C:\Users\Qi\OneDrive - McGill University\ECSE 429\ECSE429SoftwareTesting\target\classes;C:\Users\Qi\.m2\repository\com\google\code\gson\gson\2.11.0\gson-2.11.0.jar;C:\Users\Qi\.m2\repository\com\google\errorprone\error_prone_annotations\2.27.0\error_prone_annotations-2.27.0.jar;C:\Users\Qi\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;C:\Users\Qi\.m2\repository\xmlunit\xmlunit\1.6\xmlunit-1.6.jar;C:\Users\Qi\.m2\repository\org\xmlunit\xmlunit-core\2.10.0\xmlunit-core-2.10.0.jar;C:\Users\Qi\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\2.3.3\jakarta.xml.bind-api-2.3.3.jar;C:\Users\Qi\.m2\repository\jakarta\activation\jakarta.activation-api\1.2.2\jakarta.activation-api-1.2.2.jar;C:\Users\Qi\.m2\repository\org\xmlunit\xmlunit-assertj\2.10.0\xmlunit-assertj-2.10.0.jar;C:\Users\Qi\.m2\repository\org\assertj\assertj-core\2.9.0\assertj-core-2.9.0.jar;C:\Users\Qi\.m2\repository\net\bytebuddy\byte-buddy\1.10.10\byte-buddy-1.10.10.jar;C:\Users\Qi\.m2\repository\io\cucumber\cucumber-java\7.20.1\cucumber-java-7.20.1.jar;C:\Users\Qi\.m2\repository\io\cucumber\cucumber-core\7.20.1\cucumber-core-7.20.1.jar;C:\Users\Qi\.m2\repository\io\cucumber\cucumber-gherkin\7.20.1\cucumber-gherkin-7.20.1.jar;C:\Users\Qi\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.20.1\cucumber-gherkin-messages-7.20.1.jar;C:\Users\Qi\.m2\repository\io\cucumber\gherkin\28.0.0\gherkin-28.0.0.jar;C:\Users\Qi\.m2\repository\io\cucumber\messages\24.1.0\messages-24.1.0.jar;C:\Users\Qi\.m2\repository\io\cucumber\testng-xml-formatter\0.2.0\testng-xml-formatter-0.2.0.jar;C:\Users\Qi\.m2\repository\io\cucumber\query\12.2.0\query-12.2.0.jar;C:\Users\Qi\.m2\repository\io\cucumber\tag-expressions\6.1.0\tag-expressions-6.1.0.jar;C:\Users\Qi\.m2\repository\io\cucumber\cucumber-expressions\17.1.0\cucumber-expressions-17.1.0.jar;C:\Users\Qi\.m2\repository\io\cucumber\datatable\7.20.1\datatable-7.20.1.jar;C:\Users\Qi\.m2\repository\io\cucumber\cucumber-plugin\7.20.1\cucumber-plugin-7.20.1.jar;C:\Users\Qi\.m2\repository\io\cucumber\docstring\7.20.1\docstring-7.20.1.jar;C:\Users\Qi\.m2\repository\io\cucumber\html-formatter\21.7.0\html-formatter-21.7.0.jar;C:\Users\Qi\.m2\repository\io\cucumber\junit-xml-formatter\0.5.0\junit-xml-formatter-0.5.0.jar;C:\Users\Qi\.m2\repository\io\cucumber\ci-environment\10.0.1\ci-environment-10.0.1.jar;C:\Users\Qi\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Qi\.m2\repository\io\cucumber\cucumber-junit-platform-engine\7.20.1\cucumber-junit-platform-engine-7.20.1.jar;C:\Users\Qi\.m2\repository\org\junit\platform\junit-platform-engine\1.11.3\junit-platform-engine-1.11.3.jar;C:\Users\Qi\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Qi\.m2\repository\org\junit\platform\junit-platform-commons\1.11.3\junit-platform-commons-1.11.3.jar;C:\Users\Qi\.m2\repository\org\junit\platform\junit-platform-suite\1.11.3\junit-platform-suite-1.11.3.jar;C:\Users\Qi\.m2\repository\org\junit\platform\junit-platform-suite-api\1.11.3\junit-platform-suite-api-1.11.3.jar;C:\Users\Qi\.m2\repository\org\junit\platform\junit-platform-suite-engine\1.11.3\junit-platform-suite-engine-1.11.3.jar;C:\Users\Qi\.m2\repository\org\junit\platform\junit-platform-suite-commons\1.11.3\junit-platform-suite-commons-1.11.3.jar;C:\Users\Qi\.m2\repository\org\junit\platform\junit-platform-launcher\1.11.3\junit-platform-launcher-1.11.3.jar;C:\Users\Qi\.m2\repository\org\junit\jupiter\junit-jupiter\5.11.3\junit-jupiter-5.11.3.jar;C:\Users\Qi\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.3\junit-jupiter-api-5.11.3.jar;C:\Users\Qi\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.3\junit-jupiter-params-5.11.3.jar;C:\Users\Qi\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.11.3\junit-jupiter-engine-5.11.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Qi\AppData\Local\Temp\surefire6898498435244073409\surefirebooter-20241104192542233_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Qi\AppData\Local\Temp\surefire10818904146357488195\surefirebooter-20241104221521661_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.9+11-LTS-201"/>
@@ -56,17 +56,42 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="" classname="com.testproject.todoTasksOfTest" time="0.001">
-    <error message="HttpClient" type="java.lang.NoClassDefFoundError"><![CDATA[java.lang.NoClassDefFoundError: HttpClient
-	at java.base/java.lang.Class.getDeclaredFields0(Native Method)
-	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3297)
-	at java.base/java.lang.Class.getDeclaredFields(Class.java:2371)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-Caused by: java.lang.ClassNotFoundException: HttpClient
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
-	... 4 more
-]]></error>
+  <testcase name="getAllTestSuccess" classname="com.testproject.todoTasksOfTest" time="0.013">
+    <system-out><![CDATA[<projects><project><active>false</active><description/><id>1</id><completed>false</completed><title>Office Work</title><tasks><id>179</id></tasks><tasks><id>2</id></tasks><tasks><id>1</id></tasks></project></projects>
+<projects>
+    <project>
+        <active>false</active>
+        <description />
+        <id>1</id>
+        <completed>false</completed>
+        <title>Office Work</title>
+        <tasks>
+            <id>179</id>
+        </tasks>
+        <tasks>
+            <id>2</id>
+        </tasks>
+        <tasks>
+            <id>1</id>
+        </tasks>
+    </project>
+</projects>
+
+]]></system-out>
   </testcase>
+  <testcase name="postMalformedJSONTestFail" classname="com.testproject.todoTasksOfTest" time="0.004"/>
+  <testcase name="patchTestNotAllowed" classname="com.testproject.todoTasksOfTest" time="0.005"/>
+  <testcase name="putTestNotAllowed" classname="com.testproject.todoTasksOfTest" time="0.005"/>
+  <testcase name="optionsTestSuccess" classname="com.testproject.todoTasksOfTest" time="0.004"/>
+  <testcase name="postmalformedXMLTestFail" classname="com.testproject.todoTasksOfTest" time="0.006">
+    <system-out><![CDATA[<errorMessages><errorMessage>Misshaped element at 3 [character 1 line 2]</errorMessage></errorMessages>
+]]></system-out>
+  </testcase>
+  <testcase name="postTestSuccess" classname="com.testproject.todoTasksOfTest" time="0.006">
+    <system-out><![CDATA[{"projects":[{"id":"64","title":"Second Project","completed":"false","active":"false","description":"","tasks":[{"id":"185"}]}]}
+]]></system-out>
+  </testcase>
+  <testcase name="headTestSuccess" classname="com.testproject.todoTasksOfTest" time="0.003"/>
+  <testcase name="postNonExistentTestFail" classname="com.testproject.todoTasksOfTest" time="0.006"/>
+  <testcase name="deleteTestNotAllowed" classname="com.testproject.todoTasksOfTest" time="0.006"/>
 </testsuite>
