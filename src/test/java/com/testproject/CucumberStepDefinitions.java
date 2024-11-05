@@ -95,7 +95,7 @@ public class CucumberStepDefinitions {
 
       String request_body = helper.mapToJSONString(relation_request_body);
 
-      HttpRequest post_request = request.uri(new URI(baseURL + related_name + "/" + instance_id + "/" + related_name))
+      HttpRequest post_request = request.uri(new URI(baseURL + endpoint_name + "/" + instance_id + "/" + related_name))
                                       .POST(HttpRequest.BodyPublishers.ofString(request_body))
                                       .build();
       client.send(post_request, BodyHandlers.ofString());

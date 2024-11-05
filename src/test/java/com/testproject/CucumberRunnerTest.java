@@ -26,7 +26,7 @@ import java.util.List;
 @SelectClasspathResource("com/testproject")
 @ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME, value = "html:target/cucumber.html")
 @ConfigurationParameter(key = Constants.GLUE_PROPERTY_NAME, value = "com.testproject")
-public class CucumberRunner {
+public class CucumberRunnerTest {
     static final String baseURL = "http://localhost:4567/todos";
     static HttpClient client = HttpClient.newHttpClient();
     static Builder request = HttpRequest.newBuilder();
