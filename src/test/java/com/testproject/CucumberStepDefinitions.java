@@ -34,7 +34,7 @@ public class CucumberStepDefinitions {
     static final int NOT_FOUND_CODE = 404; 
     static final int NOT_ALLOWED_CODE = 405; 
     
-    int nb_instances;
+    int nb_initial_instances;
     HashMap<String, Object> new_instance;
     HashMap<String, Object> new_request_body;
     int returnCode;
@@ -44,7 +44,7 @@ public class CucumberStepDefinitions {
 
     @Given("There are {string} todos instances in my list")
     public void initial_nb_of_instances(String n){
-      nb_instances = Integer.parseInt(n);
+      nb_initial_instances = Integer.parseInt(n);
     }
 
     @Given("I want to create an instance of {string}")
@@ -237,7 +237,7 @@ public class CucumberStepDefinitions {
         HttpResponse<String> response = client.send(send_request, BodyHandlers.ofString());
         @SuppressWarnings("rawtypes")
         List todos_instances = (List) helper.jsonStringToMap(response.body()).get(endpoint_name);
-        assertEquals(nb_instances + 1, todos_instances.size());
+        assertEquals(nb_initial_instances + 1, todos_instances.size());
       }
 
       @Then("I should see the instance removed from my {string} list successfully")
@@ -250,7 +250,7 @@ public class CucumberStepDefinitions {
         @SuppressWarnings("rawtypes")
         List todos_instances = (List) helper.jsonStringToMap(response.body()).get(endpoint_name);
 
-        assertEquals(nb_instances - 1, todos_instances.size());
+        assertEquals(nb_initial_instances - 1, todos_instances.size());
       }
 
       @Then("I do not see any change in my {string} list")
@@ -263,7 +263,7 @@ public class CucumberStepDefinitions {
         @SuppressWarnings("rawtypes")
         List todos_instances = (List) helper.jsonStringToMap(response.body()).get(endpoint_name);
 
-        assertEquals(nb_instances, todos_instances.size());
+        assertEquals(nb_initial_instances, todos_instances.size());
       }
 
       @Then("the {string} is equal to {string}")
