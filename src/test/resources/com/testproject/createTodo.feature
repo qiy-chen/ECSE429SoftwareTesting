@@ -36,7 +36,7 @@ Given I want to create an instance of "todos"
 And the binary value of "doneStatus" is "<doneStatus>"
 When I send a request to the server to create the instance
 Then I receive an error of invalid request
-And I do not see any additionnal instance in my "todos" list
+And I do not see any change in my "todos" list
 
 Examples: Todo Fields Values
 | doneStatus |

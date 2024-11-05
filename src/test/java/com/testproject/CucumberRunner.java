@@ -1,7 +1,5 @@
 package com.testproject;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.platform.suite.api.ConfigurationParameter;
 import org.junit.platform.suite.api.IncludeEngines;
 import org.junit.platform.suite.api.SelectClasspathResource;
@@ -63,13 +61,11 @@ public class CucumberRunner {
             // Convert to hashmap
             @SuppressWarnings("unchecked")
             HashMap<String, Object> instance = new Gson().fromJson(new Gson().toJson(((LinkedTreeMap<String, Object>) todos_list.get(i))), HashMap.class);
-            System.out.println(instance.get("id"));
-            if (instance.get("id") != "1" ||  instance.get("id") != "2") {
-                HttpRequest delete_request = request.uri(new URI(baseURL + "/" + (String) instance.get("id") ))
-                                    .DELETE()
-                                    .build();
-                client.send(delete_request, BodyHandlers.ofString());
-            }
+            HttpRequest delete_request = request.uri(new URI(baseURL + "/" + (String) instance.get("id") ))
+                                .DELETE()
+                                .build();
+            client.send(delete_request, BodyHandlers.ofString());
+            
         }
     }
 
