@@ -67,4 +67,11 @@ public class helper {
         }
         return total/list.size();
     }
+    public static long getSumListLong(LinkedList<Long> list){
+        Long total = 0L;
+        for (int i = 0; i < list.size(); i++){
+            total += list.get(i);
+        }
+        return total;
+    }
 }

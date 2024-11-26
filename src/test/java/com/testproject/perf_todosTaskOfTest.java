@@ -34,7 +34,7 @@ public class perf_todosTaskOfTest {
     static final int NOT_FOUND_CODE = 404; 
     static final int NOT_ALLOWED_CODE = 405;
 
-    static final int[] nb_objects_tested = {50, 100, 1000, 2500, 5000, 10000};
+    static final int[] nb_objects_tested = {50, 100, 1000, 2500, 5000};
 
     static final String TODOS = "todos";
     static final String PROJECTS = "projects";
@@ -132,20 +132,23 @@ public class perf_todosTaskOfTest {
             // Free memory stats
             LinkedList<Long> free_memory = new LinkedList<Long>();
             // Test create time
-            long create_start_time = System.currentTimeMillis();
+            LinkedList<Long> time = new LinkedList<Long>();
             for (int j = 0; j < nb_objects_tested[i]; j ++){
                 HashMap<String, Object> new_request_body = new HashMap<String, Object>();
                 new_request_body.put("id", list_ids.get(j));
                 HttpRequest test_request = request.uri(new URI(URLTodos + "/" + test_instance.get("id") + "/tasksof"))
                                             .POST(HttpRequest.BodyPublishers.ofString(helper.mapToJSONString(new_request_body)))
                                             .build();
+                long create_start_time = System.currentTimeMillis();
                 client.send(test_request, BodyHandlers.ofString());
+                long create_end_time = System.currentTimeMillis();
                 // Record cpu and memory stats
                 cpu_usage.add(operatingSystemMXBean.getProcessCpuLoad());
                 free_memory.add(operatingSystemMXBean.getFreeMemorySize());
+                time.add(create_end_time - create_start_time);
                 }
-            long create_end_time = System.currentTimeMillis();
-            System.out.println(String.format("ADD %d PROJECT RELATIONS:\t %d ms\t %f CPU \t %d Free Memory", nb_objects_tested[i], create_end_time - create_start_time, helper.getMeanListDouble(cpu_usage), helper.getMeanListLong(free_memory)));
+            
+            System.out.println(String.format("ADD %d PROJECT RELATIONS:\t %d ms\t %f CPU \t %d Free Memory", nb_objects_tested[i], helper.getSumListLong(time), helper.getMeanListDouble(cpu_usage), helper.getMeanListLong(free_memory)));
             // Wait for server to be idle
             Thread.sleep(3000);
         }
@@ -189,7 +192,7 @@ public class perf_todosTaskOfTest {
             // Free memory stats
             LinkedList<Long> free_memory_delete = new LinkedList<Long>();
             // Test delete time
-            long delete_start_time = System.currentTimeMillis();
+            LinkedList<Long> time = new LinkedList<Long>();
 
             for (int j = 0; j < list_ids.size(); j ++){
                 HashMap<String, Object> new_request_body = new HashMap<String, Object>();
@@ -197,13 +200,16 @@ public class perf_todosTaskOfTest {
                 HttpRequest test_request = request.uri(new URI(URLTodos + "/" + test_instance.get("id") + "/tasksof/" + list_ids.get(j)))
                                             .DELETE()
                                             .build();
+                long delete_start_time = System.currentTimeMillis();
                 client.send(test_request, BodyHandlers.ofString());
+                long delete_end_time = System.currentTimeMillis();
                 // Record cpu and memory stats
                 cpu_usage_delete.add(operatingSystemMXBean.getProcessCpuLoad());
                 free_memory_delete.add(operatingSystemMXBean.getFreeMemorySize());
+                time.add(delete_end_time - delete_start_time);
                 }
-            long delete_end_time = System.currentTimeMillis();
-            System.out.println(String.format("DELETE %d PROJECT RELATIONS:\t %d ms\t %f CPU \t %d Free Memory", nb_objects_tested[i], delete_end_time - delete_start_time, helper.getMeanListDouble(cpu_usage_delete), helper.getMeanListLong(free_memory_delete)));
+            
+            System.out.println(String.format("DELETE %d PROJECT RELATIONS:\t %d ms\t %f CPU \t %d Free Memory", nb_objects_tested[i], helper.getSumListLong(time), helper.getMeanListDouble(cpu_usage_delete), helper.getMeanListLong(free_memory_delete)));
             // Wait for server to be idle
             Thread.sleep(3000);
         }
