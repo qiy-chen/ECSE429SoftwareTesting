@@ -1,5 +1,6 @@
 package com.testproject;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.custommonkey.xmlunit.DetailedDiff;
@@ -51,5 +52,19 @@ public class helper {
     @SuppressWarnings("rawtypes")
     public static Object getFirstInstanceFromListFromProp(HashMap<String, Object> map, String propName) {
         return ((List) map.get(propName)).get(0);
+    }
+    public static double getMeanListDouble(LinkedList<Double> list){
+        Double total = 0.0;
+        for (int i = 0; i < list.size(); i++){
+            total += list.get(i);
+        }
+        return total/list.size();
+    }
+    public static long getMeanListLong(LinkedList<Long> list){
+        Long total = 0L;
+        for (int i = 0; i < list.size(); i++){
+            total += list.get(i);
+        }
+        return total/list.size();
     }
 }
