@@ -68,7 +68,6 @@ public class perf_todosTest {
                                 .DELETE()
                                 .build();
             client.send(delete_request, BodyHandlers.ofString());
-            
         }
     }
 
@@ -91,10 +90,10 @@ public class perf_todosTest {
                                             .POST(HttpRequest.BodyPublishers.ofString(request_body))
                                             .build();
                 client.send(test_request, BodyHandlers.ofString());
-                }
                 // Record cpu and memory stats
                 cpu_usage.add(operatingSystemMXBean.getProcessCpuLoad());
                 free_memory.add(operatingSystemMXBean.getFreeMemorySize());
+                }
             long create_end_time = System.currentTimeMillis();
             System.out.println(String.format("CREATE %d TODOS:\t %d ms\t %f CPU \t %d Free Memory", nb_objects_tested[i], create_end_time - create_start_time, helper.getMeanListDouble(cpu_usage), helper.getMeanListLong(free_memory)));
             // Wait for server to be idle
@@ -139,10 +138,10 @@ public class perf_todosTest {
                                     .DELETE()
                                     .build();
                 client.send(delete_request, BodyHandlers.ofString());
-                }
                 // Record cpu and memory stats
                 cpu_usage_delete.add(operatingSystemMXBean.getProcessCpuLoad());
                 free_memory_delete.add(operatingSystemMXBean.getFreeMemorySize());
+                }
             long delete_end_time = System.currentTimeMillis();
             System.out.println(String.format("DELETE %d TODOS:\t %d ms\t %f CPU \t %d Free Memory", nb_objects_tested[i], delete_end_time - delete_start_time, helper.getMeanListDouble(cpu_usage_delete), helper.getMeanListLong(free_memory_delete)));
             // Wait for server to be idle
@@ -188,10 +187,10 @@ public class perf_todosTest {
                                     .POST(HttpRequest.BodyPublishers.ofString(change_request_body))
                                     .build();
                 client.send(change_request, BodyHandlers.ofString());
-                }
                 // Record cpu and memory stats
                 cpu_usage.add(operatingSystemMXBean.getProcessCpuLoad());
                 free_memory.add(operatingSystemMXBean.getFreeMemorySize());
+                }
             long end_time = System.currentTimeMillis();
             System.out.println(String.format("CHANGE(POST) %d TODOS:\t %d ms\t %f CPU \t %d Free Memory", nb_objects_tested[i], end_time - start_time, helper.getMeanListDouble(cpu_usage), helper.getMeanListLong(free_memory)));
             // Wait for server to be idle
@@ -236,10 +235,10 @@ public class perf_todosTest {
                                     .PUT(HttpRequest.BodyPublishers.ofString(change_request_body))
                                     .build();
                 client.send(change_request, BodyHandlers.ofString());
-                }
                 // Record cpu and memory stats
                 cpu_usage.add(operatingSystemMXBean.getProcessCpuLoad());
                 free_memory.add(operatingSystemMXBean.getFreeMemorySize());
+                }
             long end_time = System.currentTimeMillis();
             System.out.println(String.format("CHANGE(PUT) %d TODOS:\t %d ms\t %f CPU \t %d Free Memory", nb_objects_tested[i], end_time - start_time, helper.getMeanListDouble(cpu_usage), helper.getMeanListLong(free_memory)));
             // Wait for server to be idle
